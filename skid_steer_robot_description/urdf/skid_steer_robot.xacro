@@ -2,7 +2,8 @@
 <robot name="skid_steer_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find skid_steer_robot_description)/urdf/materials.xacro" />
-<xacro:include filename="$(find skid_steer_robot_description)/urdf/skid_steer_robot.trans" />
+<xacro:include filename="$(find skid_steer_robot_description)/urdf/skid_steer_robot.gazebo" />
+
 <link name="base_link">
   <inertial>
     <origin xyz="-0.08074999999999999 0.0002951386446549577 0.10797375596261434" rpy="0 0 0"/>
@@ -24,7 +25,7 @@
   </collision>
 </link>
 
-<link name="lidar_1">
+<link name="lidar">
   <inertial>
     <origin xyz="-0.008294099570319555 1.386446543170201e-07 0.09520087611989277" rpy="0 0 0"/>
     <mass value="1.1515616542314224"/>
@@ -33,19 +34,19 @@
   <visual>
     <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="steel_satin"/>
   </visual>
   <collision>
     <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
 
-<link name="imu_1">
+<link name="imu">
   <inertial>
     <origin xyz="-0.09998800046377702 9.147358505776733e-05 0.0008618985625794828" rpy="0 0 0"/>
     <mass value="0.004997129426507204"/>
@@ -54,14 +55,14 @@
   <visual>
     <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="opaque170178196"/>
   </visual>
   <collision>
     <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -174,13 +175,13 @@
 <joint name="lidar_joint" type="fixed">
   <origin xyz="-0.08075 0.000295 0.109022" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="lidar_1"/>
+  <child link="lidar"/>
 </joint>
 
 <joint name="imu_joint" type="fixed">
   <origin xyz="-0.08075 0.000295 0.109022" rpy="0 0 0"/>
   <parent link="base_link"/>
-  <child link="imu_1"/>
+  <child link="imu"/>
 </joint>
 
 <joint name="camera_joint" type="fixed">

@@ -1,5 +1,5 @@
 import launch
-from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution, PythonExpression
 import launch_ros
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
@@ -43,7 +43,7 @@ def generate_launch_description():
     # Declare the launch arguments
     declare_use_sim_time = DeclareLaunchArgument(
         name='use_sim_time',
-        default_value='False',
+        default_value='True',
         description='Use simulation (Gazebo) clock if true')
 
     declare_robot_model_path = DeclareLaunchArgument(
@@ -94,7 +94,7 @@ def generate_launch_description():
     # Start Ignition Gazebo
     start_gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(pkg_gz_sim_ros, 'launch', 'gz_sim.launch.py')),
-        launch_arguments={"gz_args": world}.items(),
+        launch_arguments={"gz_args" : PythonExpression(["'", world, " -r'"])}.items()
         )
 
     # Spawn robot
@@ -111,6 +111,22 @@ def generate_launch_description():
             '-P', spawn_pitch_val,
             '-Y', spawn_yaw_val],
         output='screen')
+    
+    gz_ros2_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            "/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry",
+            "/model/skid_steer_robot/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V",
+            "/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
+            "/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU",
+        ],
+        remappings=[
+            ('/model/skid_steer_robot/tf', '/tf')
+        ]
+    )
 
     # Create the launch description and populate
     ld = LaunchDescription()
@@ -128,5 +144,6 @@ def generate_launch_description():
     ld.add_action(start_joint_state_publisher_node)
     ld.add_action(start_rviz_node)
     ld.add_action(spawn_entity)
+    ld.add_action(gz_ros2_bridge)
     
     return ld
