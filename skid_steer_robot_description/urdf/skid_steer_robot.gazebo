@@ -1,8 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="skid_steer_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-  <xacro:property name="body_color" value="Gazebo/Silver" />
-
   <gazebo>
     <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
         <render_engine>ogre2</render_engine>
@@ -16,57 +14,105 @@
   </gazebo>  
 
   <gazebo reference="base_link">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.75 0.75 0.75 1.0</ambient>
+        <diffuse>0.75 0.75 0.75 1.0</diffuse>
+        <specular>0.75 0.75 0.75 1.0</specular>
+      </material>
+    </visual>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
     <gravity>true</gravity>
   </gazebo>
 
-  <gazebo reference="lidar_1">
-    <material>${body_color}</material>
+  <gazebo reference="lidar">
+    <visual>
+      <material>
+        <ambient>0.0 0.0 1.0 1.0</ambient>
+        <diffuse>0.0 0.0 1.0 1.0</diffuse>
+        <specular>0.0 0.0 1.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
-  <gazebo reference="imu_1">
-    <material>${body_color}</material>
+  <gazebo reference="imu">
+    <visual>
+      <material>
+        <ambient>0.0 0.0 1.0 1.0</ambient>
+        <diffuse>0.0 0.0 1.0 1.0</diffuse>
+        <specular>0.0 0.0 1.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="zed_mini_1">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.0 1.0 0.0 1.0</ambient>
+        <diffuse>0.0 1.0 0.0 1.0</diffuse>
+        <specular>0.0 1.0 0.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="right_front_wheel_1">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.0 0.0 0.0 1.0</ambient>
+        <diffuse>0.0 0.0 0.0 1.0</diffuse>
+        <specular>0.0 0.0 0.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>100.2</mu1>
     <mu2>100.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="right_back_wheel_1">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.0 0.0 0.0 1.0</ambient>
+        <diffuse>0.0 0.0 0.0 1.0</diffuse>
+        <specular>0.0 0.0 0.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>100.2</mu1>
     <mu2>100.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="left_front_wheel_1">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.0 0.0 0.0 1.0</ambient>
+        <diffuse>0.0 0.0 0.0 1.0</diffuse>
+        <specular>0.0 0.0 0.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>100.2</mu1>
     <mu2>100.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
 
   <gazebo reference="left_back_wheel_1">
-    <material>${body_color}</material>
+    <visual>
+      <material>
+        <ambient>0.0 0.0 0.0 1.0</ambient>
+        <diffuse>0.0 0.0 0.0 1.0</diffuse>
+        <specular>0.0 0.0 0.0 1.0</specular>
+      </material>
+    </visual>
     <mu1>100.2</mu1>
     <mu2>100.2</mu2>
     <selfCollide>true</selfCollide>
@@ -80,7 +126,7 @@
       <right_joint>right_front_joint</right_joint>
       <left_joint>left_back_joint</left_joint>
       <right_joint>right_back_joint</right_joint>
-      <odom_publish_frequency>30</odom_publish_frequency>
+      <odom_publish_frequency>60</odom_publish_frequency>
       <wheel_separation>0.40</wheel_separation>
       <wheel_radius>0.17</wheel_radius>
       <topic>/cmd_vel</topic>
