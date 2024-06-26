@@ -1,0 +1,220 @@
+<?xml version="1.0" ?>
+<robot name="skid_steer_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find skid_steer_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find skid_steer_robot_description)/urdf/skid_steer_robot.trans" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.08074999999999999 0.0002951386446549577 0.10797375596261434" rpy="0 0 0"/>
+    <mass value="11.861572300466149"/>
+    <inertia ixx="0.147071" iyy="0.407612" izz="0.553376" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.008294099570319555 1.386446543170201e-07 0.09520087611989277" rpy="0 0 0"/>
+    <mass value="1.1515616542314224"/>
+    <inertia ixx="0.000489" iyy="0.000861" izz="0.000987" ixy="-0.0" iyz="-0.0" ixz="-0.000148"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_1">
+  <inertial>
+    <origin xyz="-0.09998800046377702 9.147358505776733e-05 0.0008618985625794828" rpy="0 0 0"/>
+    <mass value="0.004997129426507204"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque170178196"/>
+  </visual>
+  <collision>
+    <origin xyz="0.08075 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/imu_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="zed_mini_1">
+  <inertial>
+    <origin xyz="-0.020609190830304686 -0.0011813252779344992 0.013252341589407413" rpy="0 0 0"/>
+    <mass value="0.44647457908999877"/>
+    <inertia ixx="0.000586" iyy="4.3e-05" izz="0.000583" ixy="6e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.23925 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/zed_mini_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque191191191"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.23925 -0.000295 -0.109022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/zed_mini_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="2.3498597991056247e-07 -0.03137906657473147 -4.712920191746184e-07" rpy="0 0 0"/>
+    <mass value="0.94911119349937"/>
+    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.10925 0.180205 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque170178196"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.10925 0.180205 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_wheel_1">
+  <inertial>
+    <origin xyz="2.3498597973015123e-07 -0.03137906657473144 -4.712920194660519e-07" rpy="0 0 0"/>
+    <mass value="0.9491111934993678"/>
+    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.27075 0.180205 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque170178196"/>
+  </visual>
+  <collision>
+    <origin xyz="0.27075 0.180205 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="-9.543055692895486e-09 0.03137930359057159 -1.2051076318797538e-07" rpy="0 0 0"/>
+    <mass value="0.9491110270115712"/>
+    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.10925 -0.180795 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque170178196"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.10925 -0.180795 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_wheel_1">
+  <inertial>
+    <origin xyz="-9.543055567995395e-09 0.03137930359057167 -1.2051076297980856e-07" rpy="0 0 0"/>
+    <mass value="0.9491110270115715"/>
+    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.27075 -0.180795 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="opaque170178196"/>
+  </visual>
+  <collision>
+    <origin xyz="0.27075 -0.180795 -0.118022" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="-0.08075 0.000295 0.109022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="imu_joint" type="fixed">
+  <origin xyz="-0.08075 0.000295 0.109022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_1"/>
+</joint>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.23925 0.000295 0.109022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="zed_mini_1"/>
+</joint>
+
+<joint name="right_front_joint" type="continuous">
+  <origin xyz="0.10925 -0.180205 0.118022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="right_back_joint" type="continuous">
+  <origin xyz="-0.27075 -0.180205 0.118022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_back_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_front_joint" type="continuous">
+  <origin xyz="0.10925 0.180795 0.118022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_back_joint" type="continuous">
+  <origin xyz="-0.27075 0.180795 0.118022" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_back_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+</robot>

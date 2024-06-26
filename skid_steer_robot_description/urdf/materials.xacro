@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot name="skid_steer_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<material name="silver_default">
+  <color rgba="0.700 0.700 0.700 1.000"/>
+</material>
+<material name="opaque170178196">
+  <color rgba="0.6666666666666666 0.6980392156862745 0.7686274509803922 1.0"/>
+</material>
+<material name="steel_satin">
+  <color rgba="0.6274509803921569 0.6274509803921569 0.6274509803921569 1.0"/>
+</material>
+<material name="opaque191191191">
+  <color rgba="0.7490196078431373 0.7490196078431373 0.7490196078431373 1.0"/>
+</material>
+
+</robot>
