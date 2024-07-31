@@ -90,19 +90,19 @@
 
 <link name="right_front_wheel_1">
   <inertial>
-    <origin xyz="2.3498597991056247e-07 -0.03137906657473147 -4.712920191746184e-07" rpy="0 0 0"/>
-    <mass value="0.94911119349937"/>
-    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    <origin xyz="8.243405957841787e-15 -0.032472752043596786 9.685754420729609e-10" rpy="0 0 0"/>
+    <mass value="8.688740501145128"/>
+    <inertia ixx="0.016085" iyy="0.027779" izz="0.016085" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.10925 0.180205 -0.118022" rpy="0 0 0"/>
+    <origin xyz="-0.19 0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="opaque170178196"/>
+    <material name="steel_satin"/>
   </visual>
   <collision>
-    <origin xyz="-0.10925 0.180205 -0.118022" rpy="0 0 0"/>
+    <origin xyz="-0.19 0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -111,19 +111,19 @@
 
 <link name="right_back_wheel_1">
   <inertial>
-    <origin xyz="2.3498597973015123e-07 -0.03137906657473144 -4.712920194660519e-07" rpy="0 0 0"/>
-    <mass value="0.9491111934993678"/>
-    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    <origin xyz="8.243405957841787e-15 -0.032472752043596786 9.685754004395974e-10" rpy="0 0 0"/>
+    <mass value="8.688740501145128"/>
+    <inertia ixx="0.016085" iyy="0.027779" izz="0.016085" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.27075 0.180205 -0.118022" rpy="0 0 0"/>
+    <origin xyz="0.19 0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="opaque170178196"/>
+    <material name="steel_satin"/>
   </visual>
   <collision>
-    <origin xyz="0.27075 0.180205 -0.118022" rpy="0 0 0"/>
+    <origin xyz="0.19 0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -132,19 +132,19 @@
 
 <link name="left_front_wheel_1">
   <inertial>
-    <origin xyz="-9.543055692895486e-09 0.03137930359057159 -1.2051076318797538e-07" rpy="0 0 0"/>
-    <mass value="0.9491110270115712"/>
-    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    <origin xyz="8.243405957841787e-15 0.032472752043596786 9.685754559507487e-10" rpy="0 0 0"/>
+    <mass value="8.688740501145128"/>
+    <inertia ixx="0.016085" iyy="0.027779" izz="0.016085" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.10925 -0.180795 -0.118022" rpy="0 0 0"/>
+    <origin xyz="-0.19 -0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="opaque170178196"/>
+    <material name="steel_satin"/>
   </visual>
   <collision>
-    <origin xyz="-0.10925 -0.180795 -0.118022" rpy="0 0 0"/>
+    <origin xyz="-0.19 -0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -153,19 +153,19 @@
 
 <link name="left_back_wheel_1">
   <inertial>
-    <origin xyz="-9.543055567995395e-09 0.03137930359057167 -1.2051076297980856e-07" rpy="0 0 0"/>
-    <mass value="0.9491110270115715"/>
-    <inertia ixx="0.001555" iyy="0.002702" izz="0.001555" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    <origin xyz="8.243405957841787e-15 0.032472752043596786 9.685754420729609e-10" rpy="0 0 0"/>
+    <mass value="8.688740501145128"/>
+    <inertia ixx="0.016085" iyy="0.027779" izz="0.016085" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.27075 -0.180795 -0.118022" rpy="0 0 0"/>
+    <origin xyz="0.19 -0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="opaque170178196"/>
+    <material name="steel_satin"/>
   </visual>
   <collision>
-    <origin xyz="0.27075 -0.180795 -0.118022" rpy="0 0 0"/>
+    <origin xyz="0.19 -0.1805 -0.08" rpy="0 0 0"/>
     <geometry>
       <mesh filename="file://$(find skid_steer_robot_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>

@@ -127,8 +127,8 @@
       <left_joint>left_back_joint</left_joint>
       <right_joint>right_back_joint</right_joint>
       <odom_publish_frequency>60</odom_publish_frequency>
-      <wheel_separation>0.40</wheel_separation>
-      <wheel_radius>0.17</wheel_radius>
+      <wheel_separation>0.371</wheel_separation>
+      <wheel_radius>0.16</wheel_radius>
       <topic>/cmd_vel</topic>
       <odom_topic>/odom</odom_topic>
       <frame_id>odom</frame_id>
@@ -137,7 +137,7 @@
   </gazebo>
 
   <!-- IMU Sensor plugin -->
-  <gazebo reference="imu">
+  <!-- <gazebo reference="imu">
     <sensor name="imu_sensor" type="imu">
       <always_on>1</always_on>
       <update_rate>1</update_rate>
@@ -145,7 +145,7 @@
       <visualize>true</visualize>
       <topic>imu</topic>
     </sensor>
-  </gazebo>
+  </gazebo> -->
 
   <!-- Lidar Sensor plugin -->
   <gazebo reference="lidar">
@@ -159,7 +159,7 @@
       <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
+            <samples>180</samples>
             <resolution>1</resolution>
             <min_angle>-3.14</min_angle>
             <max_angle>3.14</max_angle>
@@ -173,7 +173,7 @@
         </scan>
         <range>
           <min>0.08</min>
-          <max>10.0</max>
+          <max>5.0</max>
           <resolution>0.01000</resolution>
         </range>
         <noise>
